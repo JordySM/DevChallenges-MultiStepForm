@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Sora:wght@200;400;500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap');
 
 /* Reset some default styles */
 body, h1, h2, h3, p, ul, li {
@@ -13,118 +13,224 @@ a {
 
 * {
     box-sizing: border-box;
+
+    font-family: 'Inter', sans-serif;
+
+    /* Color vars */
+    --dark-blue: #652CD1;
+    --light-blue: #845EEE;
+    --black: #121826;
+    --grey-1: #212936;
+    --grey-2: #394150;
+    --grey-3: #4D5562;
+    --grey-4: #A1A1A9;
+    --white: #E5E7EB;
+
+    /* Border radius */
+    --border-radius: .75rem;
+
+    /* Input padding */
+    --form-pad: 2.5rem;
+    --input-pad: .8rem;
+
+    /* Button border radius */
+    --btn-radius: 1.5rem;
 }
 
 /* Add some styles for body*/
 body {
     min-height: 100vh;
-    max-width: 1280px;
-    margin: 0 auto;
-    background: #020617;
-    color: #cbd5e1;
-    font-family: 'Sora', sans-serif;
-    line-height: 1.5;
-    background-image: radial-gradient(#0f172a 1px,transparent 0),radial-gradient(#0f172a 1px,transparent 0);
-    background-position: 0 0,25px 25px;
-    background-attachment: fixed;
-    background-size: 50px 50px;
-    overflow-x: hidden;
-    padding: 4rem;
-    display: flex;
-    justify-content: space-between;
-    flex-direction: column;
-}
-
-header {
-    display: flex;
-    justify-content: space-between;
-
-}
-
-.get-started {
-    padding: 1rem 2rem;
-    border: 0.5px solid #1e293b;
-    background-color: #94a3b817;
-    border-radius: 2rem;
-    font-size: 0.875rem;
-    font-weight: 200;
     width: 100%;
-    text-align: center;
-}
-
-main {
+    line-height: 1.5;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    row-gap: 0.5rem;
-    column-gap: 1.5rem;
-}
+    gap: 1rem;
 
-.title {
-    position: relative;
-    text-align: center;
-}
-
-.title::after {
-    content: "";
-    background: url('../images/blur-bg.svg');
-    background-size: contain;
+    background: url("./../images/blur-radial.svg") -50% -20rem, url("./../images/blur-radial.svg") 150% 20rem;
     background-repeat: no-repeat;
-    position: absolute;
-    bottom: -130px;
-    right: -75px;
-    width: 500px;
-    height: 250px;
-    opacity: 0.5;
+    
+    /* background-clip: padding-box; */
+    background-size: 60%;
+    background-color: var(--black);
+}
+.hidden
+{
+    display: none !important;
+}
+.transparent
+{
+    color: transparent;
+}
+.register-form
+{
+    background-color: rgba(200, 200, 200, .1);
+    border: 1px solid rgba(250, 250, 250, .15);
+    padding: var(--form-pad);
+    border-radius: var(--border-radius);
+    overflow: hidden;
+    width: clamp(300px, 100%, 500px);
+    backdrop-filter: blur(3rem);
+    position: relative;
+}
+.form-section
+{
+    display: none !important;
+    width: 100%;
+}
+.form-section.active
+{
+    display: block !important;
+}
+.form-section .section-title
+{
+    margin-bottom: 1rem;
+}
+.register-section
+{
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
 }
 
-.logo {
-    display: none;
+.section-title
+{
+    font-size: 1.25rem;
+
+    font-weight: 500;
+    color: var(--white);
 }
 
-
-.link-card {
-    padding: 1rem;
-    border: 0.5px solid transparent;
-    transition: all ease-in-out 50ms;
+.section-content
+{
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+.input-row
+{
+    display: flex;
+    flex-direction: column;
+    gap: .2rem;
+}
+.row-title
+{
+    font-size: .75rem;
+    color: var(--grey-4)
+}
+.input-row input
+{
+    padding: .8rem 1rem;
+    background-color: transparent;
+    border: 2px solid var(--grey-3);
+    border-radius: var(--border-radius);
+    color: var(--grey-4);
+    font-size: .75rem;
+}
+.input-row input::placeholder
+{
+    color: var(--grey-3);
+}
+.section-btns
+{
+    margin-top: 1rem;
+    display: flex;
+    justify-content: center;
+}
+.button
+{
+    font-size: .75rem;
     cursor: pointer;
+    border: 0;
+    color: var(--white);
+    border-radius: var(--btn-radius);
+    padding: .7rem 2rem;
+    background: rgb(101,44,209);
+background: linear-gradient(0deg, rgba(101,44,209,1) 0%, rgba(101,44,209,1) 31%, rgba(101,44,209,1) 55%, rgba(132,94,238,1) 100%);
 }
 
-.link-card:hover {
-    border: 0.5px solid #1e293b;
-    background-color: #94a3b817;
-    border-radius: 8px;
+/* Steps */
+.step-row
+{
+    color: var(--grey-2);
+    font-size: .75rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+}
+.step-btns
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1.25rem;
+}
+.btn-step
+{
+    cursor: pointer;
+    width: .6rem;
+    height: .6rem;
+    border-radius: 50%;
+    background-color: var(--grey-2);
+}
+.btn-step.passed-step
+{
+    background-color: var(--light-blue) !important;
+}
+.btn-step.current-step
+{
+    cursor: default !important;
+    background-color: var(--light-blue) !important;
+    box-shadow: 0 0 0 .35rem rgba(132, 94, 238, .2) !important;
 }
 
-.link-title {
-    font-size: 1.125rem;
+/* Topics section */
+.topics-section .section-content
+{
+    margin: 1.5rem 0;
+    gap: 1rem;
+}
+.topics-section .checkbox
+{
+    cursor: pointer;
+    padding: var(--input-pad);
+    border-radius: var(--border-radius);
+    background-color: rgba(250, 250, 250, .1);
+    color: var(--grey-4);
+    font-size: .875rem;
+    border: 1px solid var(--grey-3);
+}
+.topics-section .checkbox:hover
+{
+    border: 1px solid var(--white);
+    color: var(--white);
+}
+.topics-section .checkbox.selected
+{    
+    background-color: var(--dark-blue) !important;
+    border: 1px solid var(--light-blue) !important;
+    color: var(--white) !important;
 }
 
-.link-description {
-    font-size: 0.875rem;
-    font-weight: 200;
-    margin-top: 0.5rem;
-    color: #94a3b8;
+/* SUMMARY SECTION */
+.summary-section
+{
+    color: var(--white);
 }
-
-@media screen and (min-width: 720px) {
-    .logo {
-        display: initial;
-    }
-
-    .get-started {
-        width: auto;
-    }
-
-    main {
-        flex-direction: row;
-    }
-
-    footer {
-        display: grid;
-        grid-template-columns: repeat(4, 1fr);
-        gap: 1rem;
-    }
-
-  }
+.summary-section .first-step > div
+{
+    
+    display: flex;
+    gap: .3rem;
+}
+.summary-section .summary-title
+{
+    color: var(--grey-4);
+}
+.summary-section .topics-list
+{
+    padding-left: 1rem;
+    list-style-position: inside;
+}

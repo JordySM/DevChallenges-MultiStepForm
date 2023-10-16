@@ -8,39 +8,66 @@
     <link rel="icon" href="images/favicon.ico" type="image/x-icon" sizes="any">
 </head>
 <body>
-    <header>
-        <div class="get-started">Get started by editting <b>index.html</b></div>
-        <img class="logo" src="images/logo.svg" alt="Main Logo">
-    </header>
-
-    <main>
-        <img src="images/devchallenges-logo.svg" alt="A beautiful landscape">
-        <h3 class="title">Responsive Web Developer Starter</h3>
-    </main>
-
-    <footer>
-        <a class="link-card" href="https://devchallenges.io/" target="_blank">
-            <div class="link-title">Challenges</div>
-            <div class="link-description">Choose a challenge and start learning by building real-life projects.</div>
-        </a>
-
-        <a class="link-card" href="https://devchallenges.io/challenges" target="_blank">
-            <div class="link-title">Solutions</div>
-            <div class="link-description">Checkout how orders solve the challenges, compare with yours and give them feedback.</div>
-        </a>
-
-        <a class="link-card" href="https://devchallenges.io/" target="_blank">
-            <div class="link-title">Blogs</div>
-            <div class="link-description">Checkout devchallenges blogs, tutorials, updates. Find useful resources to get you started.</div>
-        </a>
-
-        <a class="link-card" href="https://devchallenges.io/" target="_blank">
-            <div class="link-title">Deploy</div>
-            <div class="link-description">How to deploy and submit your solution.</div>
-        </a>
-       
-    </footer>
-
-    <script src="script.js"></script>
+    <form action="/" method="post" class="register-form">
+        <section class="form-section register-section active">
+            <h2 class="section-title">Register</h2>
+            <div class="section-content">
+                <label for="name" class="input-row">
+                    <div class="row-title">Name</div>
+                    <input type="text" name="name" class="name" placeholder="Enter your name">
+                </label>
+                <label for="email" class="input-row">
+                    <div class="row-title">Email</div>
+                    <input type="text" name="email" class="email" placeholder="example@mail.com">
+                </label>
+            </div>
+            <div class="section-btns">
+                <button id="btn-go-to-2" class="button">Continue</button>
+            </div>
+        </section>
+        <section class="form-section topics-section">
+            <h2 class="section-title">Which topics you are interested in?</h2>
+            <div class="section-content">
+                <div class="checkbox" number="1">Software Development</div>
+                <div class="checkbox" number="2">User Experience</div>
+                <div class="checkbox" number="3">Graphic Design</div>
+            </div>
+            <div class="section-btns">
+                <button id="btn-go-to-3" class="button">Continue</button>
+            </div>
+        </section>
+        <section class="form-section summary-section">
+            <h2 class="section-title">Summary</h2>
+            <div class="section-content">
+                <div class="first-step">
+                    <div class="summary-name">
+                        <div class="summary-title">Name:</div> <div class="summary-name-text">"<em class="summary-title">empty name</em>"</div>
+                    </div>
+                    <div class="summary-email">
+                        <div class="summary-title">Email:</div> <div class="summary-email-text">"<em class="summary-title">empty email</em>"</div>
+                    </div>
+                </div>
+                <div class="second-step">
+                    <div class="summary-title">Topics:</div>
+                    <ul class="topics-list">
+                        <em class="summary-title">No topics selected</em>
+                    </ul>
+                </div>
+            </div>
+            <div class="section-btns">
+                <button id="form-submit" class="button">Confirm</button>
+            </div>
+        </section>
+    </form>
+    <label for="steps" class="step-row">
+        <div class="steps-text">
+            Step <span class="current-step-text">0</span> of <span class="total-steps">0</span>
+        </div>
+        <div class="step-btns"></div>
+        <div class="steps-text transparent">
+            Step <span class="current-step-text">0</span> of <span class="total-steps">0</span>
+        </div>
+    </label>
+    <script src="./js/script.js"></script>
 </body>
 </html>
