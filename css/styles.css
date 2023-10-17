@@ -55,6 +55,14 @@ body {
     background-size: 60%;
     background-color: var(--black);
 }
+.correct
+{
+    border-color: greenyellow !important;
+}
+.wrong
+{
+    border-color: salmon !important;
+}
 .hidden
 {
     display: none !important;

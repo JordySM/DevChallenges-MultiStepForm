@@ -19,14 +19,14 @@ window.addEventListener("load", function(){
         // Function for each button
         btnsGoTo.forEach(element => {
             let stepNum = (element.getAttribute("id")).split("-").slice(-1)[0]
-
+            
             if(!isNaN(stepNum))
             {
                 stepNum = parseInt(stepNum)
                 if(stepNum > 0 && stepNum <= stepSections.length)
                     element.addEventListener("click", function(){
                         event.preventDefault();
-                        goToStep(stepNum)
+                        goToStep(stepNum);
                     })
             }
                 
