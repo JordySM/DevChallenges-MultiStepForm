@@ -121,6 +121,18 @@ function goToStep(stepNumber)
     if(stepNumber < 1 || stepNumber > stepSections.length)
         return false;
 
+    switch(currentStep)
+    {
+        case 1:
+            if(!validateStep1())
+                return;
+            break;
+        
+        default:
+            // return;
+            break;
+    }
+
     stepSections.forEach(element => {
         element.classList.remove("active")        
     });
@@ -133,6 +145,8 @@ function goToStep(stepNumber)
     });
 
     makeBtns(stepNumber)
+
+    currentStep = stepNumber
 }
 
 
@@ -217,4 +231,52 @@ function updateSummary()
 
         topicsList.appendChild(topicElement)
     });
+}
+
+function validateStep1()
+{
+    // Get input values
+    let name = document.querySelector(".register-section .name");
+        let nameText = (String) (name.value);
+    let email = document.querySelector(".register-section .email");
+        let emailText = (String) (email.value);
+
+    let validName = false;
+    let validEmail = false;
+
+    // Validate name
+    let regexName = "^[a-zA-Z\s]+$";
+        if(nameText.match(regexName))
+        {
+            validName = true;
+            name.classList.add("correct");
+            name.classList.remove("wrong");
+        }
+        else
+        {
+            name.classList.remove("correct");
+            name.classList.add("wrong");
+        }
+
+    // Validate email
+    let regexEmail = "/^\w+@[\d\w\.-]+\w+\.\w{2,}$/";
+        if(emailText.match(regexEmail))
+        {
+            validEmail = true;
+            email.classList.add("correct");
+            email.classList.remove("wrong");
+        }
+        else
+        {
+            email.classList.add("wrong");
+            email.classList.remove("correct");
+        }
+    // alert("Name: " + (String)(validName))
+    // alert("Email: " + (String)(validEmail))
+    if(!validEmail || !validName)
+    {
+        return false;
+    }
+
+    return true;
 }
